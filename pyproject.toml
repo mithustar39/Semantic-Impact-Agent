@@ -1,0 +1,23 @@
+[project]
+name = "impactagent"
+version = "0.1.0"
+description = "Static dependency impact analysis for Python repositories."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "networkx>=3.2",
+]
+
+[project.scripts]
+impactagent = "impactagent.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["impactagent*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
